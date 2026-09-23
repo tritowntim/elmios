@@ -100,8 +100,8 @@ view model =
         , Attr.style "justify-content" "center"
         ]
         [ counter model.count
-        , button "+++++++" Increment
-        , button "-------" Decrement
+        , button "+" Increment
+        , button "-" Decrement
         ]
 
 

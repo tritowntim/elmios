@@ -10,6 +10,7 @@
     "open:ios": "npx cap open ios",
     "run:android": "npx cap run android",
     "run:ios": "npx cap run ios",
+    "i": "./scripts/i.zsh"
   },
   "dependencies": {
     "@capacitor/core": "^8.0.0",
