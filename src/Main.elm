@@ -70,18 +70,14 @@ updateApplication msg app =
 viewport : Application -> Browser.Document Msg
 viewport app =
     { title = "elmios"
-    , body =
-        [ safeAreaSpacer app.safeAreaTopInPx
-        , view app.model
-        ]
+    , body = [ view app.model ]
     }
-
 
 safeAreaSpacer : Int -> Html msg
 safeAreaSpacer topInPx =
     Html.div
         [ Attr.style "height" (String.fromInt topInPx ++ "px")
-        , Attr.style "background-color" "#1a1a2e"
+        , Attr.style "background-color" "purple"
         ]
         []
 
@@ -91,7 +87,7 @@ view model =
     Html.div
         [ Attr.style "height" "100%"
         , Attr.style "width" "100%"
-        , Attr.style "background-color" "#1a1a2e"
+        , Attr.style "background-color" "purple"
         , Attr.style "color" "#eee"
         , Attr.style "font-size" "20vw"
         , Attr.style "display" "flex"
@@ -107,7 +103,7 @@ view model =
 
 counter : Int -> Html msg
 counter count =
-    Html.div [] [ Html.text <| String.fromInt count ]
+    Html.div [Attr.style "-webkit-user-select" "none"] [ Html.text <| String.fromInt count ]
 
 
 button : String -> Msg -> Html Msg
@@ -115,6 +111,8 @@ button label action =
     Html.div
         [ Attr.style "cursor" "pointer"
         , Attr.style "user-select" "none"
+        , Attr.style "-webkit-user-select" "none"
+        , Attr.style "-webkit-touch-callout" "none"
         , Events.onClick action
         ]
         [ Html.text label ]
